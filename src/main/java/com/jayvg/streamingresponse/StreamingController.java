@@ -13,7 +13,7 @@ public class StreamingController {
     private ExecutorService nonBlockingService = Executors
       .newCachedThreadPool();
     
-    @GetMapping("/job")
+    @GetMapping("/emit-job-updates")
     public SseEmitter handleSse() {
          SseEmitter emitter = new SseEmitter();
          nonBlockingService.execute(() -> {
