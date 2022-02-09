@@ -13,6 +13,7 @@ public class StreamingController {
     private ExecutorService nonBlockingService = Executors
       .newCachedThreadPool();
     
+      // TODO: model as job with its own id and see the cancel event handling.
     @GetMapping("/emit-job-updates")
     public SseEmitter handleSse() {
          SseEmitter emitter = new SseEmitter();
